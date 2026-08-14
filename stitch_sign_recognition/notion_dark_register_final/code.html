@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | Silent Talk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#191a1a",
+                        "on-error-container": "#ff9993",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-low": "#131313",
+                        "primary-fixed-dim": "#d4d4d4",
+                        "surface-container-high": "#1f2020",
+                        "primary-dim": "#b8b9b9",
+                        "inverse-primary": "#5e5f5f",
+                        "on-secondary-container": "#c3bfb6",
+                        "on-primary-fixed-variant": "#5a5c5c",
+                        "surface-tint": "#c6c6c6",
+                        "error-container": "#7f2927",
+                        "surface-dim": "#0e0e0e",
+                        "on-error": "#490106",
+                        "surface-variant": "#252626",
+                        "on-surface": "#e7e5e5",
+                        "secondary-fixed": "#e7e2d9",
+                        "secondary-container": "#3d3b35",
+                        "surface-container-highest": "#252626",
+                        "on-primary-container": "#d0d0d0",
+                        "tertiary": "#fbf9f8",
+                        "on-tertiary-fixed-variant": "#666666",
+                        "error": "#ee7d77",
+                        "on-surface-variant": "#acabab",
+                        "background": "#0e0e0e",
+                        "primary-container": "#454747",
+                        "surface-container-lowest": "#000000",
+                        "primary": "#c6c6c6",
+                        "secondary-fixed-dim": "#d9d4cb",
+                        "outline-variant": "#474848",
+                        "on-tertiary-fixed": "#494a4a",
+                        "on-primary": "#3f4041",
+                        "on-secondary-fixed": "#413f39",
+                        "on-secondary-fixed-variant": "#5e5b54",
+                        "surface-bright": "#2b2c2c",
+                        "tertiary-dim": "#edeaea",
+                        "outline": "#757575",
+                        "secondary-dim": "#a19d95",
+                        "surface": "#0e0e0e",
+                        "secondary": "#a19d95",
+                        "inverse-surface": "#fcf9f8",
+                        "on-background": "#e7e5e5",
+                        "tertiary-fixed": "#f5f3f3",
+                        "inverse-on-surface": "#565555",
+                        "on-secondary": "#22201b",
+                        "tertiary-fixed-dim": "#e7e5e4",
+                        "on-tertiary": "#5f5f5f",
+                        "on-primary-fixed": "#3e4040",
+                        "tertiary-container": "#edeaea",
+                        "on-tertiary-container": "#575757",
+                        "error-dim": "#bb5551"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0e0e0e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Notion-like subtle depth without borders */
+        .notion-card {
+            background-color: #191a1a;
+            box-shadow: 0 0 0 1px rgba(71, 72, 72, 0.15), 0 8px 40px rgba(0, 0, 0, 0.4);
+        }
+        .input-focus-effect:focus {
+            background-color: #1f2020;
+            outline: none;
+            box-shadow: 0 0 0 1px rgba(198, 198, 198, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-center items-center p-6 selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Suppressed/Minimal for Transactional Page) -->
+<header class="fixed top-0 w-full flex justify-center items-center h-16 px-6 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="text-xl font-bold tracking-tighter text-on-surface">Silent Talk</span>
+</div>
+</header>
+<!-- Centered Registration Card -->
+<main class="w-full max-w-[420px] z-10">
+<div class="notion-card rounded-xl p-8 md:p-10 transition-all duration-300">
+<!-- Header -->
+<div class="mb-10 text-center">
+<h1 class="text-2xl font-semibold tracking-tight text-on-surface mb-2">Create an account</h1>
+<p class="text-sm text-on-surface-variant font-medium">Join the future of inclusive communication.</p>
+</div>
+<!-- Form -->
+<form class="space-y-5">
+<!-- Full Name -->
+<div class="space-y-1.5">
+<label class="text-[0.6875rem] uppercase tracking-[0.05rem] font-bold text-on-surface-variant px-1" for="name">Full Name</label>
+<input class="w-full h-11 bg-surface-container-lowest border-none rounded-lg px-4 text-on-surface placeholder:text-outline/40 text-sm input-focus-effect transition-all" id="name" placeholder="e.g. Alex Rivera" type="text"/>
+</div>
+<!-- Work Email -->
+<div class="space-y-1.5">
+<label class="text-[0.6875rem] uppercase tracking-[0.05rem] font-bold text-on-surface-variant px-1" for="email">Work Email</label>
+<input class="w-full h-11 bg-surface-container-lowest border-none rounded-lg px-4 text-on-surface placeholder:text-outline/40 text-sm input-focus-effect transition-all" id="email" placeholder="name@company.com" type="email"/>
+</div>
+<!-- Password -->
+<div class="space-y-1.5">
+<label class="text-[0.6875rem] uppercase tracking-[0.05rem] font-bold text-on-surface-variant px-1" for="password">Password</label>
+<input class="w-full h-11 bg-surface-container-lowest border-none rounded-lg px-4 text-on-surface placeholder:text-outline/40 text-sm input-focus-effect transition-all" id="password" placeholder="••••••••" type="password"/>
+</div>
+<!-- Submit Button -->
+<div class="pt-4">
+<button class="w-full h-11 bg-gradient-to-br from-primary to-primary-dim text-on-primary font-semibold text-sm rounded-lg hover:opacity-90 active:scale-[0.98] transition-all duration-150" type="submit">
+                        Get Started
+                    </button>
+</div>
+</form>
+<!-- Footer Link -->
+<div class="mt-8 text-center">
+<p class="text-sm text-on-surface-variant">
+                    Already have an account? 
+                    <a class="text-primary font-medium hover:text-on-surface transition-colors ml-1" href="#">Login</a>
+</p>
+</div>
+</div>
+<!-- Subtle Branding Decoration -->
+<div class="mt-12 flex flex-col items-center opacity-20 pointer-events-none">
+<div class="h-px w-16 bg-outline-variant mb-6"></div>
+<p class="text-[0.625rem] uppercase tracking-widest text-on-surface-variant">Accessibility First</p>
+</div>
+</main>
+<!-- Simplified Footer -->
+<footer class="fixed bottom-0 w-full flex flex-col md:flex-row justify-between items-center py-8 px-6 md:px-12 w-full mt-auto">
+<p class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.05rem] text-on-surface-variant">© 2024 Silent Talk. Accessibility First.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.05rem] text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.05rem] text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>

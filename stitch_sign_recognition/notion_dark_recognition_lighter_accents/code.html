@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Recognition | Silent Talk</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ffffff",
+              "on-primary": "#191919",
+              "background": "#191919",
+              "surface": "#252525", // Slightly lighter for card backgrounds
+              "surface-container": "#2f3437", // Swapped for higher contrast
+              "on-surface": "#ffffff",
+              "on-surface-variant": "#9b9b9b",
+              "outline": "#3f3f3f", // Lighter gray for tertiary borders
+              "outline-variant": "#4a4a4a",
+              "primary-fixed": "#37352f",
+              "on-primary-fixed-variant": "#ebecee",
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {
+              "DEFAULT": "3px", 
+              "lg": "3px", 
+              "xl": "4px", 
+              "2xl": "6px", 
+              "3xl": "8px", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #191919;
+            color: #ffffff;
+        }
+        h1, h2, h3 { font-family: 'Inter', sans-serif; font-weight: 700; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass {
+            background: rgba(37, 37, 37, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .notion-border {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        ::selection {
+            background-color: #2383e2;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-blue-600/30 transition-colors duration-300">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-[100] glass">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-14">
+<div class="flex items-center">
+<div class="text-lg font-bold tracking-tight text-on-surface flex items-center gap-2">
+<div class="w-6 h-6 bg-white rounded-sm flex items-center justify-center text-background shadow-sm">
+<span class="material-symbols-outlined text-xs">waving_hand</span>
+</div>
+                Silent Talk
+            </div>
+</div>
+<div class="hidden md:flex items-center gap-6 font-semibold text-[13px] tracking-tight">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Home</a>
+<a class="text-on-surface relative after:absolute after:bottom-[-20px] after:left-0 after:w-full after:h-0.5 after:bg-white" href="#">Sign→Text</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Text→ISL</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Learn ISL</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-white text-background px-4 py-1.5 rounded-[4px] font-bold text-[13px] hover:bg-opacity-90 transition-all">
+                Login
+            </button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20 max-w-7xl mx-auto px-6">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Main Content Area -->
+<div class="flex-1 space-y-10">
+<!-- Header & Status -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div data-aos="fade-up">
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Sign Recognition</h1>
+<p class="text-on-surface-variant font-medium text-base">Translate Indian Sign Language to text in real-time.</p>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-sm text-green-400 font-bold text-[10px] uppercase tracking-widest self-start md:self-auto">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    Camera Active
+                </div>
+</div>
+<!-- Video Feed & UI Overlays -->
+<div class="relative group aspect-video bg-surface rounded-lg overflow-hidden notion-border" data-aos="zoom-in">
+<img class="w-full h-full object-cover opacity-90" data-alt="A focused close up of hands signing Indian Sign Language" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyiQdLu4QLBnaYU9fUOuhwhqzPwV5RJWkQqh_qMVlhp-j0LDROBWSxIydxcpkqFoANzbd3KWCACJHsT7nfyxdpi03AJ9CfsRUATvhc17FPHkxn1bf9EvuPJGTIFDlhXT2fe6izhwUs-KxhM6DzU0JTiw1Qh3T6tJiMXpJ5OzXRqh1ZT_SAXJ_NGYCxH7IxkEiJCR3KG0IIuh8dpXnmF8mCBQ9Cb1nlNsmsMFs1RFxT7FjuhMPir6vgcf5xrOgrPYFGF4YSKWBRhsRr"/>
+<!-- Progress Bar Overlay -->
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background to-transparent">
+<div class="flex justify-between items-center text-white mb-2 text-[10px] font-bold tracking-widest uppercase opacity-80">
+<span>Recognition Strength</span>
+<span>85%</span>
+</div>
+<div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-white/40 w-[85%] transition-all duration-300"></div>
+</div>
+</div>
+<!-- Floating Controls -->
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<button class="bg-surface/80 hover:bg-white/20 w-10 h-10 rounded-md flex items-center justify-center text-on-surface transition-all notion-border">
+<span class="material-symbols-outlined text-lg">fullscreen</span>
+</button>
+<button class="bg-surface/80 hover:bg-white/20 w-10 h-10 rounded-md flex items-center justify-center text-on-surface transition-all notion-border">
+<span class="material-symbols-outlined text-lg">videocam_off</span>
+</button>
+</div>
+</div>
+<!-- Sentence Display Area -->
+<div class="bg-surface p-8 rounded-lg notion-border space-y-6" data-aos="fade-up">
+<div class="flex justify-between items-center border-b border-white/10 pb-4">
+<span class="font-bold text-[10px] text-on-surface-variant uppercase tracking-widest">Assembled Sentence</span>
+<button class="p-1.5 hover:bg-white/10 rounded transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+</button>
+</div>
+<div class="min-h-[100px] flex flex-wrap items-baseline gap-x-3 gap-y-2">
+<span class="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">Namaste,</span>
+<span class="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">how</span>
+<span class="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">can</span>
+<span class="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">I</span>
+<span class="text-3xl md:text-4xl font-bold text-on-surface tracking-tight border-b-2 border-white/30">help?</span>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex flex-wrap gap-3 pt-4">
+<button class="px-6 py-2.5 bg-white text-background rounded-[4px] font-bold text-sm flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+                        Speak
+                    </button>
+<button class="px-5 py-2.5 bg-white/[0.08] text-on-surface rounded-[4px] font-bold text-sm flex items-center gap-2 hover:bg-white/[0.12] transition-all border border-white/10">
+<span class="material-symbols-outlined text-lg">space_bar</span>
+                        Space
+                    </button>
+<button class="px-5 py-2.5 bg-white/[0.08] text-on-surface rounded-[4px] font-bold text-sm flex items-center gap-2 hover:bg-white/[0.12] transition-all border border-white/10">
+<span class="material-symbols-outlined text-lg">backspace</span>
+                        Delete
+                    </button>
+<button class="ml-auto px-5 py-2.5 bg-red-950/30 text-red-400 rounded-[4px] font-bold text-sm flex items-center gap-2 hover:bg-red-950/50 transition-all border border-red-500/20">
+<span class="material-symbols-outlined text-lg">delete_sweep</span>
+                        Clear
+                    </button>
+</div>
+</div>
+</div>
+<!-- Right Sidebar -->
+<aside class="w-full lg:w-96 space-y-8">
+<!-- Mode Switch Panel -->
+<div class="bg-surface p-8 rounded-lg notion-border" data-aos="fade-left">
+<h3 class="font-bold text-[11px] uppercase tracking-[0.2em] text-on-surface-variant mb-6">Mode Switch</h3>
+<div class="space-y-2">
+<button class="w-full flex items-center justify-between p-3 bg-white/[0.05] text-on-surface font-semibold rounded-[4px] transition-all border border-white/10">
+<span class="text-sm">Sign → Text</span>
+<span class="material-symbols-outlined text-white text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 text-on-surface-variant hover:bg-white/[0.05] transition-all font-semibold rounded-[4px]">
+<span class="text-sm">Text → ISL</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Recent Detections -->
+<div class="bg-surface p-8 rounded-lg notion-border" data-aos="fade-left" data-aos-delay="100">
+<h3 class="font-bold text-[11px] uppercase tracking-[0.2em] text-on-surface-variant mb-6">Recent Signs</h3>
+<div class="flex flex-wrap gap-2">
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">N</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">A</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">M</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">A</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">S</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">T</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">E</span>
+<span class="w-8 h-8 flex items-center justify-center bg-background text-on-surface-variant rounded-[4px] border border-white/10 text-xs font-bold">_</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">H</span>
+<span class="w-8 h-8 flex items-center justify-center bg-white/[0.07] text-on-surface rounded-[4px] border border-white/10 text-xs font-bold">O</span>
+</div>
+</div>
+<!-- Confidence Panel -->
+<div class="bg-surface p-8 rounded-lg notion-border" data-aos="fade-left" data-aos-delay="200">
+<h3 class="font-bold text-[11px] uppercase tracking-[0.2em] text-on-surface-variant mb-6">Confidence</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-[10px] font-bold uppercase mb-2">
+<span class="text-on-surface">"Help"</span>
+<span class="text-white">92%</span>
+</div>
+<div class="w-full h-1 bg-background rounded-full overflow-hidden notion-border">
+<div class="h-full bg-white/40 w-[92%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold uppercase mb-2">
+<span class="text-on-surface-variant">"Please"</span>
+<span class="text-on-surface-variant">7%</span>
+</div>
+<div class="w-full h-1 bg-background rounded-full overflow-hidden notion-border">
+<div class="h-full bg-white/10 w-[7%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold uppercase mb-2">
+<span class="text-on-surface-variant">"Work"</span>
+<span class="text-on-surface-variant">1%</span>
+</div>
+<div class="w-full h-1 bg-background rounded-full overflow-hidden notion-border">
+<div class="h-full bg-white/10 w-[1%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tips Panel -->
+<div class="bg-white/[0.03] p-8 rounded-lg notion-border space-y-5 relative overflow-hidden" data-aos="fade-left" data-aos-delay="300">
+<div class="absolute -right-4 -top-4 opacity-[0.03] text-on-surface">
+<span class="material-symbols-outlined text-9xl">lightbulb</span>
+</div>
+<h3 class="text-lg font-bold tracking-tight text-on-surface">Tips</h3>
+<ul class="space-y-4 text-xs font-medium text-on-surface-variant relative z-10">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-base text-white/60">info</span>
+<span>Ensure hands are fully within the frame.</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-base text-white/60">info</span>
+<span>Keep a neutral background.</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-base text-white/60">info</span>
+<span>Hold sign until progress fills.</span>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="w-full bg-background pt-20 pb-12 border-t border-white/10 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+<div class="col-span-1 md:col-span-2">
+<div class="text-lg font-bold tracking-tight text-on-surface mb-6 flex items-center gap-2">
+<div class="w-5 h-5 bg-white rounded-sm flex items-center justify-center text-background">
+<span class="material-symbols-outlined text-[10px]">waving_hand</span>
+</div>
+                    Silent Talk
+                </div>
+<p class="text-on-surface-variant max-w-sm mb-8 leading-relaxed text-sm">Empowering communication and accessibility through advanced AI and Indian Sign Language expertise.</p>
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-md bg-white/5 flex items-center justify-center text-on-surface-variant cursor-pointer hover:bg-white hover:text-background transition-all border border-white/5">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+<div class="w-8 h-8 rounded-md bg-white/5 flex items-center justify-center text-on-surface-variant cursor-pointer hover:bg-white hover:text-background transition-all border border-white/5">
+<span class="material-symbols-outlined text-sm">mail</span>
+</div>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase tracking-widest text-[10px] text-on-surface">Platform</h5>
+<ul class="space-y-3 text-on-surface-variant font-medium text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Sign Recognition</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Text-to-Sign</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Education</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 uppercase tracking-widest text-[10px] text-on-surface">Legal</h5>
+<ul class="space-y-3 text-on-surface-variant font-medium text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Use</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[11px] font-medium text-on-surface-variant">© 2024 Silent Talk. Minimalist Edition.</p>
+<p class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Accessibility First</p>
+</div>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<script>
+    AOS.init({
+        once: true,
+        duration: 800,
+        easing: 'ease-out-quad'
+    });
+</script>
+</body></html>

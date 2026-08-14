@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Silent Talk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#191a1a",
+                        "on-error-container": "#ff9993",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-low": "#131313",
+                        "primary-fixed-dim": "#d4d4d4",
+                        "surface-container-high": "#1f2020",
+                        "primary-dim": "#b8b9b9",
+                        "inverse-primary": "#5e5f5f",
+                        "on-secondary-container": "#c3bfb6",
+                        "on-primary-fixed-variant": "#5a5c5c",
+                        "surface-tint": "#c6c6c6",
+                        "error-container": "#7f2927",
+                        "surface-dim": "#0e0e0e",
+                        "on-error": "#490106",
+                        "surface-variant": "#252626",
+                        "on-surface": "#e7e5e5",
+                        "secondary-fixed": "#e7e2d9",
+                        "secondary-container": "#3d3b35",
+                        "surface-container-highest": "#252626",
+                        "on-primary-container": "#d0d0d0",
+                        "tertiary": "#fbf9f8",
+                        "on-tertiary-fixed-variant": "#666666",
+                        "error": "#ee7d77",
+                        "on-surface-variant": "#acabab",
+                        "background": "#0e0e0e",
+                        "primary-container": "#454747",
+                        "surface-container-lowest": "#000000",
+                        "primary": "#c6c6c6",
+                        "secondary-fixed-dim": "#d9d4cb",
+                        "outline-variant": "#474848",
+                        "on-tertiary-fixed": "#494a4a",
+                        "on-primary": "#3f4041",
+                        "on-secondary-fixed": "#413f39",
+                        "on-secondary-fixed-variant": "#5e5b54",
+                        "surface-bright": "#2b2c2c",
+                        "tertiary-dim": "#edeaea",
+                        "outline": "#757575",
+                        "secondary-dim": "#a19d95",
+                        "surface": "#0e0e0e",
+                        "secondary": "#a19d95",
+                        "inverse-surface": "#fcf9f8",
+                        "on-background": "#e7e5e5",
+                        "tertiary-fixed": "#f5f3f3",
+                        "inverse-on-surface": "#565555",
+                        "on-secondary": "#22201b",
+                        "tertiary-fixed-dim": "#e7e5e4",
+                        "on-tertiary": "#5f5f5f",
+                        "on-primary-fixed": "#3e4040",
+                        "tertiary-container": "#edeaea",
+                        "on-tertiary-container": "#575757",
+                        "error-dim": "#bb5551"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0e0e0e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        /* Custom 3D Card Depth Effect */
+        .depth-card {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center justify-center p-6 selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Branding Anchor -->
+<header class="mb-12 text-center">
+<div class="flex flex-col items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center rounded-xl ring-1 ring-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="sign_language">sign_language</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tighter text-on-surface">Silent Talk</h1>
+</div>
+</header>
+<!-- Centered Login Card -->
+<main class="w-full max-w-md">
+<div class="bg-surface-container-low depth-card rounded-xl border border-outline-variant/15 overflow-hidden transition-all duration-300">
+<div class="p-8 md:p-10">
+<div class="mb-8">
+<h2 class="text-xl font-semibold text-on-surface mb-2">Welcome back</h2>
+<p class="text-sm text-on-surface-variant">Enter your credentials to access your workspace.</p>
+</div>
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-[0.6875rem] uppercase tracking-[0.05rem] font-medium text-on-surface-variant ml-1" for="email">Email Address</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-0 ring-1 ring-outline-variant/30 focus:ring-2 focus:ring-primary/40 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 transition-all outline-none" id="email" name="email" placeholder="name@domain.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-end px-1">
+<label class="block text-[0.6875rem] uppercase tracking-[0.05rem] font-medium text-on-surface-variant" for="password">Password</label>
+<a class="text-[0.6875rem] text-on-surface-variant hover:text-primary transition-colors" href="#">Forgot password?</a>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-0 ring-1 ring-outline-variant/30 focus:ring-2 focus:ring-primary/40 rounded-lg px-4 py-3 text-on-surface placeholder:text-on-surface-variant/40 transition-all outline-none" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Sign In Button -->
+<button class="w-full py-3 px-4 bg-gradient-to-br from-primary to-primary-dim text-on-primary font-semibold rounded-lg hover:opacity-90 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 mt-8" type="submit">
+                        Sign In
+                    </button>
+</form>
+<div class="mt-8 pt-8 border-t border-outline-variant/10 text-center">
+<p class="text-sm text-on-surface-variant">
+                        Don't have an account? 
+                        <a class="text-primary font-medium hover:underline decoration-primary/30 underline-offset-4 transition-all" href="#">Create account</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Minimal Footer -->
+<footer class="mt-12 w-full max-w-4xl px-6">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 gap-4">
+<p class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.05rem] text-on-surface-variant">
+                © 2024 Silent Talk. Accessibility First.
+            </p>
+<nav class="flex gap-6">
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.05rem] text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.05rem] text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.05rem] text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+</body></html>
