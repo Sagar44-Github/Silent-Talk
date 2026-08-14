@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "name": "Landing page loads",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 2,
+    "name": "Recognize page loads",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 3,
+    "name": "Text-to-ISL page loads",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 4,
+    "name": "Gesture page loads",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 5,
+    "name": "Learn ISL page loads",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 6,
+    "name": "Login page loads",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 7,
+    "name": "Register page loads",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 8,
+    "name": "Landing shows Login button (anon)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 9,
+    "name": "Registration redirects (302)",
+    "passed": true,
+    "detail": "HTTP 302"
+  },
+  {
+    "id": 10,
+    "name": "User created in database",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 11,
+    "name": "UserProfile auto-created",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 12,
+    "name": "Avatar initials correct",
+    "passed": true,
+    "detail": "Got 'TU'"
+  },
+  {
+    "id": 13,
+    "name": "Auto-login after registration",
+    "passed": true,
+    "detail": "Nav shows 'Test'"
+  },
+  {
+    "id": 14,
+    "name": "Duplicate email rejected (stays 200)",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 15,
+    "name": "Duplicate email error shown",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 16,
+    "name": "Password mismatch rejected",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 17,
+    "name": "Password mismatch error shown",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 18,
+    "name": "Short password rejected",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 19,
+    "name": "Empty fields rejected",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 20,
+    "name": "Login succeeds (302)",
+    "passed": true,
+    "detail": "HTTP 302"
+  },
+  {
+    "id": 21,
+    "name": "Landing shows user name after login",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 22,
+    "name": "Wrong password rejected (200)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 23,
+    "name": "Wrong password error shown",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 24,
+    "name": "Unknown email rejected",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 25,
+    "name": "Empty login shows error",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 26,
+    "name": "Logged-in user redirected from /login/",
+    "passed": true,
+    "detail": "HTTP 302, Location: /"
+  },
+  {
+    "id": 27,
+    "name": "Logged-in user redirected from /register/",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 28,
+    "name": "Profile loads (authenticated)",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 29,
+    "name": "Profile shows first+last name",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 30,
+    "name": "Profile shows email",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 31,
+    "name": "Profile shows default role (Learner)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 32,
+    "name": "Profile has edit form fields",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 33,
+    "name": "Profile edit redirects (302)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 34,
+    "name": "Bio saved and displayed",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 35,
+    "name": "Role updated to Educator",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 36,
+    "name": "First name updated",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 37,
+    "name": "Avatar initials recalculated after edit",
+    "passed": true,
+    "detail": "Got 'UN'"
+  },
+  {
+    "id": 38,
+    "name": "Profile blocked for anon (302)",
+    "passed": true,
+    "detail": "Location: /login/?next=/users/profile/"
+  },
+  {
+    "id": 39,
+    "name": "Redirect has ?next=/users/profile/",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 40,
+    "name": "Logout redirects (302)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 41,
+    "name": "Landing shows Login after logout",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 42,
+    "name": "Landing shows user name (auth)",
+    "passed": true,
+    "detail": "logout=True"
+  },
+  {
+    "id": 43,
+    "name": "Recognize shows user name (auth)",
+    "passed": true,
+    "detail": "logout=True"
+  },
+  {
+    "id": 44,
+    "name": "Text-to-ISL shows user name (auth)",
+    "passed": true,
+    "detail": "logout=True"
+  },
+  {
+    "id": 45,
+    "name": "Gesture shows user name (auth)",
+    "passed": true,
+    "detail": "logout=True"
+  },
+  {
+    "id": 46,
+    "name": "Learn ISL shows user name (auth)",
+    "passed": true,
+    "detail": "logout=True"
+  },
+  {
+    "id": 47,
+    "name": "Landing shows Login btn (anon)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 48,
+    "name": "Recognize shows Login btn (anon)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 49,
+    "name": "Text-to-ISL shows Login btn (anon)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 50,
+    "name": "Gesture shows Login btn (anon)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 51,
+    "name": "Learn ISL shows Login btn (anon)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 52,
+    "name": "Learn page has IS_AUTHENTICATED var",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 53,
+    "name": "Save progress API (200)",
+    "passed": true,
+    "detail": "HTTP 200"
+  },
+  {
+    "id": 54,
+    "name": "Save returns correct counts",
+    "passed": true,
+    "detail": "m=3, g=5"
+  },
+  {
+    "id": 55,
+    "name": "Progress persisted in DB",
+    "passed": true,
+    "detail": "mastered=3, guided_only=2"
+  },
+  {
+    "id": 56,
+    "name": "Load progress API (200)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 57,
+    "name": "Load returns correct mastered",
+    "passed": true,
+    "detail": "['A', 'B', 'C']"
+  },
+  {
+    "id": 58,
+    "name": "Load returns correct guided",
+    "passed": true,
+    "detail": "['A', 'B', 'C', 'D', 'E']"
+  },
+  {
+    "id": 59,
+    "name": "Save progress blocked for anon (401)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 60,
+    "name": "Load progress empty for anon",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 61,
+    "name": "Profile total_signs_practiced updated",
+    "passed": true,
+    "detail": "Got 8"
+  },
+  {
+    "id": 62,
+    "name": "Process Text API (200)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 63,
+    "name": "Process Text returns tokens",
+    "passed": true,
+    "detail": "['hello', 'how', 'are', 'you']"
+  },
+  {
+    "id": 64,
+    "name": "Predict API handles missing frame (200)",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 65,
+    "name": "Predict returns error msg",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 66,
+    "name": "Predict Gesture handles missing frame",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 67,
+    "name": "UserProfile in admin",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 68,
+    "name": "LetterProgress in admin",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 69,
+    "name": "LearningSession in admin",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 70,
+    "name": "UserProfile has role",
+    "passed": true,
+    "detail": "role=educator"
+  },
+  {
+    "id": 71,
+    "name": "UserProfile has bio",
+    "passed": true,
+    "detail": "bio=I love ISL!"
+  },
+  {
+    "id": 72,
+    "name": "UserProfile has avatar_initial",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 73,
+    "name": "UserProfile has stats fields",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "id": 74,
+    "name": "LetterProgress works",
+    "passed": true,
+    "detail": "letter=A, status=mastered"
+  },
+  {
+    "id": 75,
+    "name": "LetterProgress unique constraint enforced",
+    "passed": true,
+    "detail": ""
+  }
+]
