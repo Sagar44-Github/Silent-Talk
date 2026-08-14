@@ -1,0 +1,160 @@
+# ==============================================================================
+# SilentTalk - The Project: Git Ignore Rules
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Virtual Environments
+# ------------------------------------------------------------------------------
+venv/
+silenttalk_env/
+env/
+ENV/
+.env/
+*/venv/
+*/env/
+*/silenttalk_env/
+.venv/
+env*/
+venv*/
+
+# ------------------------------------------------------------------------------
+# 2. Machine Learning Models, Weights, Datasets & Heavy Model Files
+# ------------------------------------------------------------------------------
+# Heavy model files & weight extensions
+*.h5
+*.p
+*.pkl
+*.pb
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.keras
+*.model
+*.weights
+*.bin
+*.joblib
+*.ckpt*
+*.safetensors
+*.npy
+*.npz
+
+# Java Archives / Parsers
+*.jar
+stanford-parser-full-*.jar
+
+# Specific ML Model files in repository
+ActionDetectionforSignLanguage/action.h5
+Sign-Language-to-Text-and-Speech/model.p
+silenttalk/recognition/action.h5
+silenttalk/recognition/model.p
+AudioToSignLanguageConverter/stanford-parser-full-2018-10-17.jar
+
+# ------------------------------------------------------------------------------
+# 3. Media, Video, Audio & Upload Directories (Large Files)
+# ------------------------------------------------------------------------------
+# Django Media & Uploads
+silenttalk/media/
+silenttalk/media/uploads/
+media/
+uploads/
+
+# Video files (e.g. Demo video.mp4 >100MB exceeds GitHub's limit)
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+*.webm
+
+# Audio files
+*.mp3
+*.wav
+*.aac
+*.m4a
+*.flac
+
+# Root Video Files explicitly
+/10373889-hd_1920_1080_30fps.mp4
+/4662095-uhd_4096_2160_25fps.mp4
+/DEMO1.mp4
+/DEMO2.mp4
+/Demo video.mp4
+
+# ------------------------------------------------------------------------------
+# 4. Databases & Local Storage
+# ------------------------------------------------------------------------------
+*.sqlite3
+*.sqlite
+*.db
+silenttalk/db.sqlite3
+
+# ------------------------------------------------------------------------------
+# 5. Environment & Secret Configuration Files
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ------------------------------------------------------------------------------
+# 6. Python Bytecode, Cache & Build Artifacts
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.nox/
+.hypothesis/
+.cache/
+
+# Build & Package artifacts
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Node modules / JavaScript dependencies (if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ------------------------------------------------------------------------------
+# 7. IDE, Editor & OS Configuration Files
+# ------------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------------------------------------------
+# 8. Logs & Large Export Files
+# ------------------------------------------------------------------------------
+*.log
+logs/
+SILENTTALK_FULL_EXPORT.txt

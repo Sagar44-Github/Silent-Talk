@@ -1,0 +1,279 @@
+
+<style>
+*{box-sizing:border-box}
+.w{padding:.5rem 0;font-family:var(--font-sans)}
+.asl-box{background:var(--color-background-success);border:.5px solid var(--color-border-success);border-radius:var(--border-radius-lg);padding:12px 14px;margin-bottom:1.2rem}
+.asl-title{font-size:13px;font-weight:500;color:var(--color-text-success);margin-bottom:8px}
+.repo{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:var(--color-background-primary);border-radius:6px;margin-bottom:6px;text-decoration:none;border:.5px solid var(--color-border-success)}
+.repo:hover{border-color:var(--color-border-info)}
+.rn{font-size:11px;font-weight:500;color:var(--color-text-info);flex-shrink:0;margin-top:1px;min-width:24px}
+.rtxt .rtitle{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+.rtxt .rmeta{font-size:11px;color:var(--color-text-tertiary)}
+.phase{margin-bottom:1.4rem}
+.ph{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:6px;border-bottom:.5px solid var(--color-border-tertiary)}
+.phnum{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0}
+.p1{background:#FAECE7;color:#993C1D}
+.p2{background:#FAEEDA;color:#633806}
+.p3{background:#EEEDFE;color:#3C3489}
+.p4{background:#E6F1FB;color:#0C447C}
+.p5{background:#E1F5EE;color:#085041}
+.p6{background:#EAF3DE;color:#3B6D11}
+.ph-info{flex:1}
+.ph-title{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.ph-sub{font-size:11px;color:var(--color-text-tertiary);margin-top:1px}
+.steps{display:flex;flex-direction:column;gap:7px;padding-left:40px}
+.step{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:9px 12px}
+.step.highlight{border-color:#1D9E75}
+.s-num{font-size:10px;font-weight:500;color:var(--color-text-tertiary);margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
+.s-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px;line-height:1.3}
+.s-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.5;margin-bottom:4px}
+.code{background:var(--color-background-secondary);border-radius:6px;padding:7px 10px;font-family:var(--font-mono);font-size:11px;color:var(--color-text-primary);margin:4px 0;white-space:pre-wrap;word-break:break-all;border:.5px solid var(--color-border-tertiary)}
+.warn{background:var(--color-background-warning);border-left:2px solid var(--color-border-warning);padding:7px 10px;border-radius:0 5px 5px 0;font-size:12px;color:var(--color-text-warning);line-height:1.5;margin:4px 0}
+.info{background:var(--color-background-info);border-left:2px solid var(--color-border-info);padding:7px 10px;border-radius:0 5px 5px 0;font-size:12px;color:var(--color-text-info);line-height:1.5;margin:4px 0}
+.good{background:var(--color-background-success);border-left:2px solid var(--color-border-success);padding:7px 10px;border-radius:0 5px 5px 0;font-size:12px;color:var(--color-text-success);line-height:1.5;margin:4px 0}
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:8px;margin-left:6px;vertical-align:middle}
+.b-do{background:#E1F5EE;color:#085041}
+.b-install{background:#EEEDFE;color:#3C3489}
+.b-test{background:#FAEEDA;color:#633806}
+.b-later{background:var(--color-background-secondary);color:var(--color-text-tertiary);border:.5px solid var(--color-border-tertiary)}
+.divider{height:.5px;background:var(--color-border-tertiary);margin:1rem 0}
+</style>
+
+<div class="w">
+
+<div class="asl-box">
+  <div class="asl-title">Verified ASL fully built repos — clone and run</div>
+  <a class="repo" href="https://github.com/Devansh-47/Sign-Language-To-Text-and-Speech-Conversion" target="_blank">
+    <span class="rn">ASL 1</span><div class="rtxt"><div class="rtitle">github.com/Devansh-47/Sign-Language-To-Text-and-Speech-Conversion</div><div class="rmeta">CNN + MediaPipe + pyttsx3 speech — ASL A-Z → text + speaks it out loud. Most straightforward to run.</div></div>
+  </a>
+  <a class="repo" href="https://github.com/SohamPrajapati/sign-language-detector-flask-python" target="_blank">
+    <span class="rn">ASL 2</span><div class="rtxt"><div class="rtitle">github.com/SohamPrajapati/sign-language-detector-flask-python</div><div class="rmeta">Flask web app + MediaPipe + Random Forest — real-time ASL detection in browser. Has a proper web interface.</div></div>
+  </a>
+  <a class="repo" href="https://github.com/sahilkhoslaa/AudioToSignLanguageConverter" target="_blank">
+    <span class="rn">ISL ↔</span><div class="rtxt"><div class="rtitle">github.com/sahilkhoslaa/AudioToSignLanguageConverter</div><div class="rmeta">Flask + ISL avatar — audio/speech → ISL sign animations. Your reverse channel (hearing person speaks → deaf person sees ISL).</div></div>
+  </a>
+</div>
+
+<div class="phase">
+  <div class="ph"><div class="phnum p1">1</div><div class="ph-info"><div class="ph-title">Install everything you need first</div><div class="ph-sub">One time only — 30 minutes</div></div></div>
+  <div class="steps">
+    <div class="step highlight">
+      <div class="s-num">step 1</div>
+      <div class="s-title">Install Python 3.10<span class="badge b-install">install</span></div>
+      <div class="s-desc">Go to python.org/downloads → download Python 3.10.x → install it. During install tick the checkbox that says "Add Python to PATH". This is important.</div>
+      <div class="info">Why 3.10 specifically? TensorFlow and MediaPipe work best on 3.10. Don't install 3.12 or 3.13 — they will break things.</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 2</div>
+      <div class="s-title">Install VS Code<span class="badge b-install">install</span></div>
+      <div class="s-desc">Go to code.visualstudio.com → download → install. This is your code editor. Install the Python extension inside VS Code (Extensions tab → search Python → install).</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 3</div>
+      <div class="s-title">Install Git<span class="badge b-install">install</span></div>
+      <div class="s-desc">Go to git-scm.com/downloads → download → install with all default settings. Git is what lets you clone repos.</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 4</div>
+      <div class="s-title">Install PostgreSQL<span class="badge b-install">install</span></div>
+      <div class="s-desc">Go to postgresql.org/download → download → install. During install set password as "admin123" (remember this). Default port 5432 is fine. Also install pgAdmin (comes with it) — that's your database visual tool.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="phase">
+  <div class="ph"><div class="phnum p2">2</div><div class="ph-info"><div class="ph-title">Create your project folder and clone all repos</div><div class="ph-sub">10 minutes</div></div></div>
+  <div class="steps">
+    <div class="step highlight">
+      <div class="s-num">step 5</div>
+      <div class="s-title">Create the SilentTalk folder<span class="badge b-do">do this</span></div>
+      <div class="s-desc">Open File Explorer → go to Desktop → right click → New Folder → name it SilentTalk. Now right click inside that folder → Open in Terminal (or open VS Code → File → Open Folder → select SilentTalk → Terminal → New Terminal).</div>
+    </div>
+    <div class="step highlight">
+      <div class="s-num">step 6</div>
+      <div class="s-title">Clone the ASL repo (your AI brain)<span class="badge b-do">paste in terminal</span></div>
+      <div class="s-desc">In the terminal that is open inside SilentTalk folder, type:</div>
+      <div class="code">git clone https://github.com/Devansh-47/Sign-Language-To-Text-and-Speech-Conversion</div>
+      <div class="s-desc">This downloads the ASL recognition project into your SilentTalk folder.</div>
+    </div>
+    <div class="step highlight">
+      <div class="s-num">step 7</div>
+      <div class="s-title">Clone the reverse channel repo (speech → ISL)<span class="badge b-do">paste in terminal</span></div>
+      <div class="code">git clone https://github.com/sahilkhoslaa/AudioToSignLanguageConverter</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 8</div>
+      <div class="s-title">Clone the Flask web app version (reference)<span class="badge b-do">paste in terminal</span></div>
+      <div class="code">git clone https://github.com/SohamPrajapati/sign-language-detector-flask-python</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 9</div>
+      <div class="s-title">Your folder structure should now look like this</div>
+      <div class="code">SilentTalk/
+├── Sign-Language-To-Text-and-Speech-Conversion/   ← AI brain
+├── AudioToSignLanguageConverter/                   ← reverse channel
+└── sign-language-detector-flask-python/            ← web reference</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="phase">
+  <div class="ph"><div class="phnum p3">3</div><div class="ph-info"><div class="ph-title">Run the ASL repo — confirm the AI works</div><div class="ph-sub">30 minutes — do this before anything else</div></div></div>
+  <div class="steps">
+    <div class="step highlight">
+      <div class="s-num">step 10</div>
+      <div class="s-title">Create a virtual environment<span class="badge b-install">important</span></div>
+      <div class="s-desc">In your terminal, go inside the ASL folder and create an isolated Python environment. This prevents library conflicts.</div>
+      <div class="code">cd Sign-Language-To-Text-and-Speech-Conversion
+python -m venv venv</div>
+      <div class="s-desc">Then activate it:</div>
+      <div class="code"># Windows:
+venv\Scripts\activate
+
+# Mac/Linux:
+source venv/bin/activate</div>
+      <div class="good">You'll see (venv) appear at the start of your terminal line. That means it's active.</div>
+    </div>
+    <div class="step highlight">
+      <div class="s-num">step 11</div>
+      <div class="s-title">Install all required libraries<span class="badge b-install">paste in terminal</span></div>
+      <div class="code">pip install -r requirements.txt</div>
+      <div class="warn">If requirements.txt doesn't exist in this repo, install manually:</div>
+      <div class="code">pip install opencv-python mediapipe tensorflow keras numpy pyttsx3 Pillow</div>
+      <div class="s-desc">This will take 5–10 minutes. Let it finish.</div>
+    </div>
+    <div class="step highlight">
+      <div class="s-num">step 12</div>
+      <div class="s-title">Run it and test<span class="badge b-do">moment of truth</span></div>
+      <div class="code">python app.py</div>
+      <div class="s-desc">A webcam window should open. Do ASL signs A, B, C in front of your camera. You should see letters appear on screen and hear them spoken. If this works — you have your AI core running.</div>
+      <div class="good">If it works, take a screen recording. This is your demo for the guide meeting.</div>
+      <div class="warn">If it crashes with a library error, screenshot the error and message me — I'll tell you exactly what to fix.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="phase">
+  <div class="ph"><div class="phnum p4">4</div><div class="ph-info"><div class="ph-title">Create YOUR Django project — the Silent Talk shell</div><div class="ph-sub">1–2 days — this is your original work</div></div></div>
+  <div class="steps">
+    <div class="step">
+      <div class="s-num">step 13</div>
+      <div class="s-title">Go back to the SilentTalk root folder and install Django<span class="badge b-install">terminal</span></div>
+      <div class="code">cd ..
+python -m venv silenttalk_env
+
+# activate it:
+silenttalk_env\Scripts\activate   # Windows
+source silenttalk_env/bin/activate  # Mac
+
+pip install django psycopg2-binary pillow tensorflow mediapipe opencv-python pyttsx3 gTTS</div>
+    </div>
+    <div class="step highlight">
+      <div class="s-num">step 14</div>
+      <div class="s-title">Create the Django project<span class="badge b-do">your project starts here</span></div>
+      <div class="code">django-admin startproject silenttalk
+cd silenttalk
+python manage.py startapp recognition
+python manage.py startapp users
+python manage.py startapp learn</div>
+      <div class="s-desc">You now have a Django project called silenttalk with 3 apps: recognition (AI webcam page), users (login/signup), learn (ISL learning module).</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 15</div>
+      <div class="s-title">Connect PostgreSQL to Django<span class="badge b-do">edit settings.py</span></div>
+      <div class="s-desc">Open silenttalk/settings.py. Find the DATABASES section and replace it with:</div>
+      <div class="code">DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'silenttalkdb',
+        'USER': 'postgres',
+        'PASSWORD': 'admin123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}</div>
+      <div class="s-desc">Now open pgAdmin → create a new database called silenttalkdb. Then run:</div>
+      <div class="code">python manage.py migrate
+python manage.py createsuperuser</div>
+    </div>
+    <div class="step highlight">
+      <div class="s-num">step 16</div>
+      <div class="s-title">Copy the AI model from the cloned repo into Django<span class="badge b-do">copy-paste</span></div>
+      <div class="s-desc">From Sign-Language-To-Text-and-Speech-Conversion folder, copy the model file (model.h5 or model.pkl) and the prediction function into your Django project:</div>
+      <div class="code">SilentTalk/
+└── silenttalk/
+    └── recognition/
+        ├── models_ai/
+        │   └── model.h5        ← paste here (from cloned repo)
+        ├── ai_engine.py        ← create this file
+        └── views.py</div>
+      <div class="s-desc">In ai_engine.py, copy the predict function from the cloned repo — the part that takes a frame and returns a letter. That is the only code you "write" — and you're copying it.</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 17</div>
+      <div class="s-title">Add AJAX webcam view + jQuery live update<span class="badge b-do">M5 syllabus done</span></div>
+      <div class="s-desc">Create recognition/templates/recognition.html with a webcam feed and jQuery that calls your Django view every 500ms and updates the detected letter on screen in real time. Covers your entire Module 5 (jQuery + AJAX) requirement.</div>
+      <div class="code">// In recognition.html — this is all jQuery AJAX you need:
+setInterval(function() {
+  $.post('/predict/', {frame: capturedFrame}, function(data) {
+    $('#detected-text').append(data.letter);
+  });
+}, 500);</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="phase">
+  <div class="ph"><div class="phnum p5">5</div><div class="ph-info"><div class="ph-title">Add the reverse channel — speech to ISL GIFs</div><div class="ph-sub">2–3 days — your unique feature</div></div></div>
+  <div class="steps">
+    <div class="step">
+      <div class="s-num">step 18</div>
+      <div class="s-title">Copy ISL GIF files from AudioToSignLanguageConverter<span class="badge b-do">copy-paste</span></div>
+      <div class="s-desc">Open the AudioToSignLanguageConverter folder you cloned. Find the folder that has ISL sign images or GIFs (usually called /isl/ or /static/signs/). Copy that entire folder into your Django project's static folder.</div>
+      <div class="code">silenttalk/static/isl_signs/
+  ├── A.gif
+  ├── B.gif
+  ├── HELLO.gif
+  ├── THANKYOU.gif
+  └── ... (all ISL signs)</div>
+    </div>
+    <div class="step">
+      <div class="s-num">step 19</div>
+      <div class="s-title">Copy the speech-to-ISL logic<span class="badge b-do">copy-paste</span></div>
+      <div class="s-desc">From AudioToSignLanguageConverter's server.py or app.py, copy the function that takes a text input → splits into words → maps each word to a GIF file path. Paste it as a new view in Django's recognition/views.py. Add a new URL and template page for it.</div>
+      <div class="good">This is YOUR original contribution — no cloned repo has both directions in Django. Bidirectional = your research novelty.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="phase">
+  <div class="ph"><div class="phnum p6">6</div><div class="ph-info"><div class="ph-title">AWS deployment — do this last, not now</div><div class="ph-sub">Only after everything works locally — Week 6+</div></div></div>
+  <div class="steps">
+    <div class="step">
+      <div class="s-num">step 20</div>
+      <div class="s-title">AWS ElasticBeanstalk deployment<span class="badge b-later">do this later</span></div>
+      <div class="s-desc">Only touch this after local version fully works. When ready:</div>
+      <div class="code">pip install awsebcli
+pip freeze > requirements.txt
+echo "web: gunicorn silenttalk.wsgi" > Procfile
+
+eb init -p python-3.10 silent-talk --region ap-south-1
+eb create silent-talk-env
+eb deploy
+eb open</div>
+      <div class="warn">Don't spend time on AWS now. Get the local version working first. AWS is just the last 1 hour of the project, not the first.</div>
+    </div>
+  </div>
+</div>
+
+</div>
